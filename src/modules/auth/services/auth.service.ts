@@ -1,10 +1,9 @@
 import prisma from '../../../config/prisma';
 import {
-  RegisterResponseDTO,
-  RegisterRequestDTO,
+  UserRequestDTO,
+  UserResponseDTO,
   LoginResponseDTO,
   LoginRequestDTO,
-  UserResponseDTO,
 } from '../auth.DTOs';
 import { hashPassword, comparePassword, generateAccessToken } from './token.service';
 import { sanitizeUser } from '../auth.mappers';
@@ -19,8 +18,8 @@ import {
 import { Role } from '../../../../generated/client/enums';
 
 export const bootstrapRegisterService = async (
-  data: RegisterRequestDTO,
-): Promise<RegisterResponseDTO> => {
+  data: UserRequestDTO,
+): Promise<UserResponseDTO> => {
   const { name, email, password } = data;
 
   const hashedPassword = await hashPassword(password);

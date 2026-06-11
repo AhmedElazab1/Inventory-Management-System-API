@@ -63,3 +63,67 @@
 {"level":"info","message":"Users fetched successfully: [object Object]","timestamp":"2026-06-10T17:42:12.903Z"}
 {"level":"info","message":"Server is running on port 8000","timestamp":"2026-06-10T17:42:24.271Z"}
 {"level":"info","message":"Server is running on port 8000","timestamp":"2026-06-10T17:44:14.664Z"}
+{"level":"info","message":"Server is running on port 8000","timestamp":"2026-06-10T19:26:45.591Z"}
+{"level":"info","message":"Server is running on port 8000","timestamp":"2026-06-11T12:18:43.634Z"}
+{"level":"info","message":"Server is running on port 8000","timestamp":"2026-06-11T12:24:50.347Z"}
+{"level":"info","message":"Server is running on port 8000","timestamp":"2026-06-11T12:27:07.224Z"}
+{"level":"info","message":"Server is running on port 8000","timestamp":"2026-06-11T12:28:13.362Z"}
+{"level":"info","message":"Server is running on port 8000","timestamp":"2026-06-11T12:30:49.134Z"}
+{"level":"info","message":"Server is running on port 8000","timestamp":"2026-06-11T12:31:15.754Z"}
+{"level":"info","message":"Server is running on port 8000","timestamp":"2026-06-11T12:31:27.758Z"}
+{"level":"info","message":"Server is running on port 8000","timestamp":"2026-06-11T12:39:47.407Z"}
+{"level":"info","message":"Server is running on port 8000","timestamp":"2026-06-11T12:39:54.651Z"}
+{"level":"info","message":"Server is running on port 8000","timestamp":"2026-06-11T12:40:51.525Z"}
+{"level":"info","message":"Server is running on port 8000","timestamp":"2026-06-11T12:42:05.731Z"}
+{"level":"info","message":"Server is running on port 8000","timestamp":"2026-06-11T12:43:46.726Z"}
+{"level":"info","message":"Server is running on port 8000","timestamp":"2026-06-11T12:48:52.995Z"}
+{"level":"info","message":"Server is running on port 8000","timestamp":"2026-06-11T12:52:09.571Z"}
+{"level":"info","message":"Server is running on port 8000","timestamp":"2026-06-11T12:52:28.971Z"}
+{"level":"info","message":"Server is running on port 8000","timestamp":"2026-06-11T12:55:13.027Z"}
+{"level":"info","message":"Server is running on port 8000","timestamp":"2026-06-11T13:01:43.486Z"}
+{"level":"info","message":"Server is running on port 8000","timestamp":"2026-06-11T13:04:25.799Z"}
+{"level":"info","message":"Server is running on port 8000","timestamp":"2026-06-11T13:04:55.232Z"}
+{"level":"info","message":"Server is running on port 8000","timestamp":"2026-06-11T13:05:03.882Z"}
+{"level":"info","message":"Server is running on port 8000","timestamp":"2026-06-11T13:05:14.778Z"}
+{"level":"info","message":"Server is running on port 8000","timestamp":"2026-06-11T13:07:14.819Z"}
+{"level":"info","message":"Server is running on port 8000","timestamp":"2026-06-11T13:07:51.500Z"}
+{"level":"info","message":"Server is running on port 8000","timestamp":"2026-06-11T13:07:53.536Z"}
+{"level":"info","message":"Server is running on port 8000","timestamp":"2026-06-11T13:07:55.533Z"}
+{"level":"info","message":"Server is running on port 8000","timestamp":"2026-06-11T13:08:09.341Z"}
+{"level":"info","message":"User logged in successfully","timestamp":"2026-06-11T13:14:01.790Z"}
+{"level":"info","message":"user created successfully","timestamp":"2026-06-11T13:14:01.925Z"}
+{"level":"info","message":"Users fetched successfully: [object Object]","timestamp":"2026-06-11T13:14:02.019Z"}
+{"level":"info","message":"User fetched successfully: [object Object]","timestamp":"2026-06-11T13:14:02.062Z"}
+{"level":"info","message":"User updated successfully: [object Object]","timestamp":"2026-06-11T13:14:02.081Z"}
+{"cause":{"message":"[\n  {\n    \"code\": \"custom\",\n    \"path\": [],\n    \"message\": \"At least one field must be provided for update\"\n  }\n]","name":"ZodError"},"details":[{"code":"custom","message":"At least one field must be provided for update","path":[]}],"level":"error","message":"Validation Error:  Validation error: At least one field must be provided for update","name":"ZodValidationError","stack":"ZodValidationError: Validation error: At least one field must be provided for update\n    at fromZodErrorWithoutRuntimeCheck (E:\\LRN\\Backend\\PROJECTS\\Inventory Sys\\Inventory Management\\node_modules\\zod-validation-error\\lib\\v4\\fromZodError.ts:50:10)\n    at <anonymous> (E:\\LRN\\Backend\\PROJECTS\\Inventory Sys\\Inventory Management\\node_modules\\zod-validation-error\\lib\\v4\\toValidationError.ts:12:14)\n    at fromError (E:\\LRN\\Backend\\PROJECTS\\Inventory Sys\\Inventory Management\\node_modules\\zod-validation-error\\lib\\v4\\fromError.ts:12:35)\n    at parse (E:\\LRN\\Backend\\PROJECTS\\Inventory Sys\\Inventory Management\\src\\common\\middlewares\\validation.ts:11:29)\n    at <anonymous> (E:\\LRN\\Backend\\PROJECTS\\Inventory Sys\\Inventory Management\\src\\common\\middlewares\\validation.ts:29:28)\n    at Layer.handleRequest (E:\\LRN\\Backend\\PROJECTS\\Inventory Sys\\Inventory Management\\node_modules\\router\\lib\\layer.js:152:17)\n    at next (E:\\LRN\\Backend\\PROJECTS\\Inventory Sys\\Inventory Management\\node_modules\\router\\lib\\route.js:157:13)\n    at Route.dispatch (E:\\LRN\\Backend\\PROJECTS\\Inventory Sys\\Inventory Management\\node_modules\\router\\lib\\route.js:117:3)\n    at handle (E:\\LRN\\Backend\\PROJECTS\\Inventory Sys\\Inventory Management\\node_modules\\router\\index.js:435:11)\n    at Layer.handleRequest (E:\\LRN\\Backend\\PROJECTS\\Inventory Sys\\Inventory Management\\node_modules\\router\\lib\\layer.js:152:17)","timestamp":"2026-06-11T13:14:02.096Z"}
+{"level":"info","message":"User deleted successfully: [object Object]","timestamp":"2026-06-11T13:14:02.107Z"}
+{"level":"info","message":"Category created successfully","timestamp":"2026-06-11T13:14:02.127Z"}
+{"count":1,"level":"info","message":"Categories fetched successfully","timestamp":"2026-06-11T13:14:02.154Z"}
+{"categoryId":"cmq9ir28d000180vdpijjwrwd","level":"info","message":"Category fetched successfully","timestamp":"2026-06-11T13:14:02.184Z"}
+{"categoryId":"cmq9ir28d000180vdpijjwrwd","level":"info","message":"Category updated successfully","timestamp":"2026-06-11T13:14:02.201Z"}
+{"categoryId":"cmq9ir28d000180vdpijjwrwd","level":"info","message":"Category deleted successfully","timestamp":"2026-06-11T13:14:02.219Z"}
+{"level":"info","message":"Server is running on port 8000","timestamp":"2026-06-11T13:16:24.595Z"}
+{"level":"info","message":"Server is running on port 8000","timestamp":"2026-06-11T13:17:53.370Z"}
+{"level":"info","message":"Server is running on port 8000","timestamp":"2026-06-11T13:18:23.924Z"}
+{"level":"info","message":"Server is running on port 8000","timestamp":"2026-06-11T13:24:30.962Z"}
+{"level":"info","message":"Server is running on port 8000","timestamp":"2026-06-11T13:31:43.323Z"}
+{"level":"info","message":"Server is running on port 8000","timestamp":"2026-06-11T13:32:20.076Z"}
+{"level":"info","message":"Server is running on port 8000","timestamp":"2026-06-11T13:32:40.529Z"}
+{"level":"info","message":"Server is running on port 8000","timestamp":"2026-06-11T13:32:42.301Z"}
+{"level":"info","message":"Server is running on port 8000","timestamp":"2026-06-11T13:36:46.484Z"}
+{"level":"info","message":"Server is running on port 8000","timestamp":"2026-06-11T13:38:20.295Z"}
+{"level":"info","message":"Server is running on port 8000","timestamp":"2026-06-11T15:16:32.281Z"}
+{"level":"info","message":"Server is running on port 8000","timestamp":"2026-06-11T15:16:49.267Z"}
+{"level":"info","message":"Server is running on port 8000","timestamp":"2026-06-11T15:16:56.448Z"}
+{"level":"info","message":"Server is running on port 8000","timestamp":"2026-06-11T15:17:06.616Z"}
+{"level":"info","message":"Server is running on port 8000","timestamp":"2026-06-11T15:17:17.739Z"}
+{"level":"info","message":"Server is running on port 8000","timestamp":"2026-06-11T15:17:26.553Z"}
+{"level":"info","message":"Server is running on port 8000","timestamp":"2026-06-11T15:35:06.622Z"}
+{"level":"info","message":"Server is running on port 8000","timestamp":"2026-06-11T17:03:57.866Z"}
+{"level":"info","message":"Server is running on port 8000","timestamp":"2026-06-11T17:31:15.850Z"}
+{"level":"info","message":"Server is running on port 8000","timestamp":"2026-06-11T17:31:31.726Z"}
+{"level":"info","message":"Server is running on port 8000","timestamp":"2026-06-11T19:05:47.488Z"}
+{"level":"info","message":"Server is running on port 8000","timestamp":"2026-06-11T19:08:40.468Z"}
+{"level":"info","message":"Server is running on port 8000","timestamp":"2026-06-11T19:08:53.544Z"}
+{"level":"info","message":"Server is running on port 8000","timestamp":"2026-06-11T19:19:43.721Z"}
+{"level":"info","message":"Server is running on port 8000","timestamp":"2026-06-11T19:19:54.566Z"}

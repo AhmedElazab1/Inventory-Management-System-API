@@ -2,6 +2,8 @@
 import express from 'express';
 import authRoutes from '../modules/auth/auth.routes';
 import userRoutes from '../modules/user/user.routes';
+import categoryRoutes from '../modules/category/category.routes';
+import productRoutes from '../modules/product/product.routes';
 
 // Types
 import { Request, Response } from 'express';
@@ -10,7 +12,7 @@ const router = express.Router();
 
 /**
  * @swagger
- * /
+ * /:
  *   get:
  *     summary: Welcome message from API
  *     tags: [Home]
@@ -33,5 +35,7 @@ router.get('/', (req: Request, res: Response) => {
 
 router.use('/auth', authRoutes);
 router.use('/user', userRoutes);
+router.use('/category', categoryRoutes);
+router.use('/product', productRoutes);
 
 export default router;
