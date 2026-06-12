@@ -22,6 +22,8 @@ export type ProductResponseDTO = {
     name: string;
   };
   variants: ProductVariantResponseDTO[];
+  totalQuantity: number;
+  isLowStock: boolean;
   createdAt: Date;
   updatedAt: Date;
 };

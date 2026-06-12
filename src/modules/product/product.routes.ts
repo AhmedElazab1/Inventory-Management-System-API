@@ -25,7 +25,7 @@ router.get('/:id', validate({ params: productParamsSchema }), getProduct);
 router.use(authorize(Role.ADMIN));
 
 router.post('/', validate({ body: createProductSchema }), createProduct);
-router.put('/:id', validate({ body: updateProductSchema }), updateProduct);
+router.patch('/:id', validate({ body: updateProductSchema }), updateProduct);
 router.delete('/:id', validate({ params: productParamsSchema }), deleteProduct);
 
 export default router;

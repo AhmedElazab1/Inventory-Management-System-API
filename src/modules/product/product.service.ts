@@ -59,8 +59,6 @@ export const getAllProductsService = async (
     category: true,
   });
 
-  // Since paginate infers T from model which lacks relation fields by default,
-  // we cast data to the correct type including relations before sanitization.
   type ProductWithRelations = Prisma.ProductGetPayload<{
     include: { variants: true; category: true };
   }>;

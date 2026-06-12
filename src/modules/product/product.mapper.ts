@@ -19,6 +19,9 @@ export function sanitizeProduct(
     return product.map((p) => sanitizeProduct(p));
   }
 
+  const totalQuantity = product.variants.reduce((sum, variant) => sum + variant.quantity, 0);
+  const isLowStock = totalQuantity <= product.lowStockThreshold;
+
   return {
     id: product.id,
     name: product.name,
@@ -37,6 +40,9 @@ export function sanitizeProduct(
       size: variant.size,
       quantity: variant.quantity,
     })),
+
+    totalQuantity,
+    isLowStock,
 
     createdAt: product.createdAt,
     updatedAt: product.updatedAt,
