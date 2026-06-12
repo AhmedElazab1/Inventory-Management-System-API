@@ -163,7 +163,7 @@ export function buildFieldSelection(fields?: string[]): Record<string, boolean> 
 export async function paginate<T>(
   model: {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    findMany: (args?: any) => Promise<T[]>;
+    findMany: (args?: any) => Promise<any>;
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     count: (args?: any) => Promise<number>;
   },

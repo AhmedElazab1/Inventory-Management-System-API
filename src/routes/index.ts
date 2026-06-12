@@ -5,6 +5,7 @@ import userRoutes from '../modules/user/user.routes';
 import categoryRoutes from '../modules/category/category.routes';
 import productRoutes from '../modules/product/product.routes';
 import inventoryRoutes from '../modules/inventory/inventory.routes';
+import salesRoutes from '../modules/sales/sales.routes';
 
 // Types
 import { Request, Response } from 'express';
@@ -39,5 +40,6 @@ router.use('/user', userRoutes);
 router.use('/category', categoryRoutes);
 router.use('/product', productRoutes);
 router.use('/inventory', inventoryRoutes);
+router.use('/sales', salesRoutes);
 
 export default router;

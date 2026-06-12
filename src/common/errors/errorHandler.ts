@@ -4,8 +4,10 @@ import { STATUS, STATUS_CODE } from '../constants/constants';
 import env from '../../config/env';
 
 const sendErrorDev = (err: ApiError, res: Response) => {
-  res.status(err.statusCode).json({
-    status: err.status,
+  const statusCode = err.statusCode || STATUS_CODE.INTERNAL_SERVER_ERROR;
+  const status = err.status || STATUS.ERROR;
+  res.status(statusCode).json({
+    status: status,
     message: err.message,
     stack: err.stack,
     error: err,
@@ -56,11 +58,6 @@ const handleJWTExpiredError = () => {
 const globalErrorHandler = (err: ApiError, req: Request, res: Response, next: NextFunction) => {
   const statusCode = err.statusCode || STATUS_CODE.INTERNAL_SERVER_ERROR;
   const status = err.status || STATUS.ERROR;
-
-  res.status(statusCode).json({
-    status,
-    message: err.message,
-  });
 
   if (env.NODE_ENV === 'development') {
     sendErrorDev(err, res);
