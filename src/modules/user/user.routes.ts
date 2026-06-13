@@ -1,12 +1,29 @@
 import express from 'express';
-import { createUser, getAllUsers, getUserById, updateUser, deleteUser } from './user.controller';
+import {
+  createUser,
+  getAllUsers,
+  getUserById,
+  updateUser,
+  deleteUser,
+  changePassword,
+  resetPassword,
+} from './user.controller';
 import { validate } from '../../common/middlewares/validation';
 import { userRegisterSchema } from '../auth/auth.validation';
 import { authenticate, authorize } from '../../common/middlewares/index';
 import { Role } from '../../../generated/client/enums';
-import { paramsIdSchema, usersQuerySchema, updateUserSchema } from './user.validation';
+import {
+  paramsIdSchema,
+  usersQuerySchema,
+  updateUserSchema,
+  changePasswordSchema,
+  resetPasswordSchema,
+} from './user.validation';
 
 const router = express.Router();
+
+router.post('/me/change-password', validate({ body: changePasswordSchema }), changePassword);
+router.post('/reset-password/:id', validate({ body: resetPasswordSchema }), resetPassword);
 
 router.use(authenticate, authorize(Role.ADMIN));
 

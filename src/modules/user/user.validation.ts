@@ -42,3 +42,12 @@ export const usersQuerySchema = z.object({
   fields: z.string().optional(),
   search: z.string().optional(),
 });
+
+export const changePasswordSchema = z.object({
+  oldPassword: z.string(),
+  newPassword: z.string().min(8).max(50),
+});
+
+export const resetPasswordSchema = z.object({
+  newPassword: z.string().min(8).max(50),
+});

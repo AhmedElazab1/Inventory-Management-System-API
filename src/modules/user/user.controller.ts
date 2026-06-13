@@ -8,6 +8,8 @@ import {
   getUserByIdService,
   updateUserService,
   deleteUserService,
+  changePasswordService,
+  resetPasswordService,
 } from './user.service';
 import { ParamsIdDTO } from './user.DTOs';
 
@@ -77,5 +79,31 @@ export const deleteUser = catchAsync(async (req: Request, res: Response): Promis
   res.status(STATUS_CODE.SUCCESS).json({
     status: STATUS.SUCCESS,
     message: 'User deleted successfully',
+  });
+});
+
+export const changePassword = catchAsync(async (req: Request, res: Response): Promise<void> => {
+  const data = req.body;
+  const { id } = req.params;
+  await changePasswordService({ id } as ParamsIdDTO, data);
+
+  logger.info(`Password changed successfully`);
+
+  res.status(STATUS_CODE.SUCCESS).json({
+    status: STATUS.SUCCESS,
+    message: 'Password changed successfully',
+  });
+});
+
+export const resetPassword = catchAsync(async (req: Request, res: Response): Promise<void> => {
+  const { id } = req.params;
+  const data = req.body;
+  await resetPasswordService({ id } as ParamsIdDTO, data);
+
+  logger.info(`Password reset successfully`);
+
+  res.status(STATUS_CODE.SUCCESS).json({
+    status: STATUS.SUCCESS,
+    message: 'Password reset successfully',
   });
 });

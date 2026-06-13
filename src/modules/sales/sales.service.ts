@@ -61,7 +61,13 @@ export const createSaleService = async (
       },
       include: {
         items: { include: { variant: { include: { product: true } } } },
-        cashier: true,
+        cashier: {
+          select: {
+            id: true,
+            name: true,
+            email: true,
+          },
+        },
       },
     });
 
@@ -92,7 +98,13 @@ export const getSaleByIdService = async (id: string): Promise<SaleResponseDTO> =
     where: { id },
     include: {
       items: { include: { variant: { include: { product: true } } } },
-      cashier: true,
+      cashier: {
+        select: {
+          id: true,
+          name: true,
+          email: true,
+        },
+      },
     },
   });
 
@@ -111,7 +123,13 @@ export const getAllSalesService = async (
     {},
     {
       items: { include: { variant: { include: { product: true } } } },
-      cashier: true,
+      cashier: {
+        select: {
+          id: true,
+          name: true,
+          email: true,
+        },
+      },
     },
   );
 

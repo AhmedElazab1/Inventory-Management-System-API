@@ -15,7 +15,13 @@ export type SaleResponseDTO = Prisma.SaleGetPayload<{
         };
       };
     };
-    cashier: true;
+    cashier: {
+      select: {
+        id: true;
+        name: true;
+        email: true;
+      };
+    };
   };
 }>;
 

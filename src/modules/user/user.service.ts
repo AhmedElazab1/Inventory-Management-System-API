@@ -1,12 +1,19 @@
 import { UserRequestDTO, UserResponseDTO } from '../auth/auth.DTOs';
-import { hashPassword } from '../auth/services/token.service';
+import { comparePassword, hashPassword } from '../auth/services/token.service';
 import prisma from '../../config/prisma';
 import { Role } from '../../../generated/client/enums';
 import { sanitizeUser } from '../auth/auth.mappers';
-import { IQueryStr, UpdateUserDTO, ParamsIdDTO } from './user.DTOs';
+import {
+  IQueryStr,
+  UpdateUserDTO,
+  ParamsIdDTO,
+  ChangePasswordDTO,
+  ResetPasswordDTO,
+} from './user.DTOs';
 import { paginate, parseQueryParams, PaginatedResult } from '../../common/utils/APIFeatures';
 import ApiError from '../../common/utils/ApiError';
 import { STATUS_CODE } from '../../common/constants/constants';
+import { User } from '../../../generated/client/client';
 
 export const createUserService = async (data: UserRequestDTO): Promise<UserResponseDTO> => {
   const { name, email, password } = data;
@@ -32,7 +39,7 @@ export const getAllUsersService = async (
   query: IQueryStr,
 ): Promise<PaginatedResult<UserResponseDTO>> => {
   const options = parseQueryParams(query);
-  const result = await paginate(prisma.user, options);
+  const result = await paginate<User>(prisma.user, options);
 
   return {
     ...result,
@@ -96,4 +103,39 @@ export const deleteUserService = async (
   });
 
   return sanitizeUser(user);
+};
+
+export const changePasswordService = async (userId: ParamsIdDTO, data: ChangePasswordDTO) => {
+  const { oldPassword, newPassword } = data;
+  const user = await prisma.user.findUnique({ where: { id: userId.id } });
+  if (!user) throw new ApiError('User not found', STATUS_CODE.NOT_FOUND);
+
+  const isPasswordValid = await comparePassword(oldPassword, user.password);
+  if (!isPasswordValid) throw new ApiError('Invalid old password', STATUS_CODE.BAD_REQUEST);
+
+  const hashedPassword = await hashPassword(newPassword);
+
+  await prisma.user.update({
+    where: { id: userId.id },
+    data: {
+      password: hashedPassword,
+    },
+  });
+};
+
+export const resetPasswordService = async (params: ParamsIdDTO, data: ResetPasswordDTO) => {
+  const { id } = params;
+  const { newPassword } = data;
+
+  const existingUser = await prisma.user.findUnique({ where: { id } });
+  if (!existingUser) throw new ApiError('User not found', STATUS_CODE.NOT_FOUND);
+
+  const hashedPassword = await hashPassword(newPassword);
+
+  await prisma.user.update({
+    where: { id },
+    data: {
+      password: hashedPassword,
+    },
+  });
 };
